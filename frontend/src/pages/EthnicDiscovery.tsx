@@ -5,6 +5,9 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { ethnicGroups } from '@/src/data';
 import Button from '@/src/components/ui/Button';
 
+import { AdvancedImage } from '@cloudinary/react';
+import { getCldImage } from '@/src/lib/cloudinary';
+
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
@@ -53,8 +56,20 @@ export default function EthnicDiscovery() {
               className="flex flex-col group"
             >
               <div className="relative aspect-[4/5] overflow-hidden rounded-sm premium-shadow mb-12">
-                <img src={ethnic.image} alt={ethnic.name} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                {ethnic.cldId ? (
+                  <AdvancedImage
+                    cldImg={getCldImage(ethnic.cldId)}
+                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                  />
+                ) : (
+                  <img
+                    src={ethnic.image}
+                    alt={ethnic.name}
+                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-earth-950 via-earth-950/20 to-transparent flex flex-col justify-end p-12 lg:p-16">
+
                    <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-px bg-white/40" />
                       <span className="text-white/60 uppercase tracking-[0.4em] text-[9px] font-bold">HÃ nh trÃ¬nh chi tiáº¿t</span>
