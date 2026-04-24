@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  
+  --color-ink: #0A0F0D;
+  --color-paper: #FDFCF8;
+  --color-indigo: #1E2D3D;
+  --color-terracotta: #8C3B1A;
+  --color-forest: #12241A;
+  --color-gold: #C5A059;
+
+  /* Premium Earth Tones */
+  --color-earth-50: #FDFCF8;
+  --color-earth-100: #F7F5F0;
+  --color-earth-200: #EEEBE3;
+  --color-earth-300: #E0DBCF;
+  --color-earth-400: #BDB49F;
+  --color-earth-500: #968B75;
+  --color-earth-600: #7A6F5C;
+  --color-earth-700: #5E5547;
+  --color-earth-800: #3E3830;
+  --color-earth-900: #24211D;
+  --color-earth-950: #0A0F0D;
+
+  --color-ethnic-indigo: var(--color-indigo);
+  --color-ethnic-red: var(--color-terracotta);
+  --color-ethnic-green: var(--color-forest);
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-sans antialiased selection:bg-terracotta/20;
+  }
+  
+  h1, h2, h3, h4, .serif {
+    @apply font-serif font-medium;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)];
+  }
+
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .glass-nav {
+    @apply bg-paper/80 backdrop-blur-xl border-b border-earth-200/50 shadow-sm;
+  }
+
+  .nav-link {
+    @apply text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-300;
+  }
+
+  .premium-shadow {
+    @apply shadow-[0_20px_50px_rgba(0,0,0,0.08)];
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.12)] hover:-translate-y-2;
+  }
+
+  .editorial-mask {
+    background: linear-gradient(to bottom, rgba(10,15,13,0) 0%, rgba(10,15,13,0.2) 50%, rgba(10,15,13,0.8) 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .animate-reveal {
+    animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
