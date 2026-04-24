@@ -5,25 +5,25 @@ import Button from '@/src/components/ui/Button';
 
 const expItems = [
   {
-    title: "Dệt lanh & Nhuộm chàm",
-    desc: "Học cách tạo ra những tấm vải di sản từ những nghệ nhân H'Mong kỳ cựu tại Lùng Tám. Một hành trình của sự kiên nhẫn và sắc màu.",
+    title: "Dá»‡t lanh & Nhuá»™m chÃ m",
+    desc: "Há»c cÃ¡ch táº¡o ra nhá»¯ng táº¥m váº£i di sáº£n tá»« nhá»¯ng nghá»‡ nhÃ¢n H'Mong ká»³ cá»±u táº¡i LÃ¹ng TÃ¡m. Má»™t hÃ nh trÃ¬nh cá»§a sá»± kiÃªn nháº«n vÃ  sáº¯c mÃ u.",
     image: "https://images.unsplash.com/photo-1610444317855-849a99781498?auto=format&fit=crop&q=80&w=800",
     icon: Camera,
-    category: "Thủ công mỹ nghệ"
+    category: "Thá»§ cÃ´ng má»¹ nghá»‡"
   },
   {
-    title: "Ẩm thực đại ngàn",
-    desc: "Tham gia vào quy trình đồ mèn mén và nấu thắng cố bên bếp lửa hồng. Khám phá bí mật gia vị của núi rừng.",
+    title: "áº¨m thá»±c Ä‘áº¡i ngÃ n",
+    desc: "Tham gia vÃ o quy trÃ¬nh Ä‘á»“ mÃ¨n mÃ©n vÃ  náº¥u tháº¯ng cá»‘ bÃªn báº¿p lá»­a há»“ng. KhÃ¡m phÃ¡ bÃ­ máº­t gia vá»‹ cá»§a nÃºi rá»«ng.",
     image: "https://images.unsplash.com/photo-1543739446-402a5d211830?auto=format&fit=crop&q=80&w=800",
     icon: Utensils,
-    category: "Ẩm thực truyền thống"
+    category: "áº¨m thá»±c truyá»n thá»‘ng"
   },
   {
-    title: "Âm nhạc & Vũ điệu",
-    desc: "Lắng nghe tiếng Khèn gọi bạn và học những điệu múa ô duyên dáng. Một bản giao hưởng giữa mây ngàn.",
+    title: "Ã‚m nháº¡c & VÅ© Ä‘iá»‡u",
+    desc: "Láº¯ng nghe tiáº¿ng KhÃ¨n gá»i báº¡n vÃ  há»c nhá»¯ng Ä‘iá»‡u mÃºa Ã´ duyÃªn dÃ¡ng. Má»™t báº£n giao hÆ°á»Ÿng giá»¯a mÃ¢y ngÃ n.",
     image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=800",
     icon: Music,
-    category: "Nghệ thuật biểu diễn"
+    category: "Nghá»‡ thuáº­t biá»ƒu diá»…n"
   }
 ];
 
@@ -38,7 +38,7 @@ export default function Experiences() {
             className="inline-flex items-center gap-2 text-terracotta text-[10px] font-bold uppercase tracking-[0.4em] mb-8"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Sống cùng bản sắc</span>
+            <span>Sá»‘ng cÃ¹ng báº£n sáº¯c</span>
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function Experiences() {
             transition={{ delay: 0.1 }}
             className="text-6xl md:text-8xl mb-8 serif leading-none"
           >
-            Trải nghiệm <br /> <span className="italic font-light text-earth-400">chạm vào di sản</span>
+            Tráº£i nghiá»‡m <br /> <span className="italic font-light text-earth-400">cháº¡m vÃ o di sáº£n</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -54,7 +54,7 @@ export default function Experiences() {
             transition={{ delay: 0.2 }}
             className="text-earth-600 text-xl italic font-serif leading-relaxed"
           >
-            Không chỉ là tham quan, chúng tôi đưa bạn vào trung tâm của văn hoá, nơi bạn trở thành một phần của câu chuyện di sản vùng cao.
+            KhÃ´ng chá»‰ lÃ  tham quan, chÃºng tÃ´i Ä‘Æ°a báº¡n vÃ o trung tÃ¢m cá»§a vÄƒn hoÃ¡, nÆ¡i báº¡n trá»Ÿ thÃ nh má»™t pháº§n cá»§a cÃ¢u chuyá»‡n di sáº£n vÃ¹ng cao.
           </motion.p>
         </header>
 
@@ -78,7 +78,7 @@ export default function Experiences() {
               <div className="p-10 flex-grow flex flex-col justify-between">
                 <p className="text-earth-600 text-lg italic font-serif leading-relaxed mb-10">{exp.desc}</p>
                 <Button variant="secondary" className="w-full group text-[10px]">
-                   Khám phá ngay <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                   KhÃ¡m phÃ¡ ngay <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
             </motion.div>
@@ -89,9 +89,9 @@ export default function Experiences() {
         <div className="mt-40 text-center max-w-5xl mx-auto py-24 border-y border-earth-100">
            <Quote className="w-12 h-12 text-terracotta/20 mx-auto mb-10" />
            <h2 className="text-4xl md:text-6xl serif italic leading-snug text-earth-900">
-              "Văn hoá không phải là một món đồ trưng bày trong lồng kính, nó là hơi thở, là nhịp sống được truyền từ đời này sang đời khác."
+              "VÄƒn hoÃ¡ khÃ´ng pháº£i lÃ  má»™t mÃ³n Ä‘á»“ trÆ°ng bÃ y trong lá»“ng kÃ­nh, nÃ³ lÃ  hÆ¡i thá»Ÿ, lÃ  nhá»‹p sá»‘ng Ä‘Æ°á»£c truyá»n tá»« Ä‘á»i nÃ y sang Ä‘á»i khÃ¡c."
            </h2>
-           <p className="mt-10 text-earth-400 text-[10px] uppercase font-bold tracking-[0.5em]">Triết lý hành động của chúng tôi</p>
+           <p className="mt-10 text-earth-400 text-[10px] uppercase font-bold tracking-[0.5em]">Triáº¿t lÃ½ hÃ nh Ä‘á»™ng cá»§a chÃºng tÃ´i</p>
         </div>
       </div>
     </div>

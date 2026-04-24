@@ -16,7 +16,7 @@ export default function Booking() {
               className="inline-flex items-center gap-2 text-terracotta text-[10px] font-bold uppercase tracking-[0.4em] mb-8"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Hành trình di sản tùy chọn</span>
+              <span>HÃ nh trÃ¬nh di sáº£n tÃ¹y chá»n</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export default function Booking() {
               transition={{ delay: 0.1 }}
               className="text-6xl md:text-8xl mb-8 serif leading-none"
             >
-              Thiết kế <br /> <span className="italic font-light text-earth-400">hành trình riêng</span>
+              Thiáº¿t káº¿ <br /> <span className="italic font-light text-earth-400">hÃ nh trÃ¬nh riÃªng</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ export default function Booking() {
               transition={{ delay: 0.2 }}
               className="text-earth-600 text-xl italic font-serif leading-relaxed"
             >
-              Chọn lọc những lịch trình được thiết kế tỉ mỉ bởi các chuyên gia văn hoá để chạm vào linh hồn của đại ngàn.
+              Chá»n lá»c nhá»¯ng lá»‹ch trÃ¬nh Ä‘Æ°á»£c thiáº¿t káº¿ tá»‰ má»‰ bá»Ÿi cÃ¡c chuyÃªn gia vÄƒn hoÃ¡ Ä‘á»ƒ cháº¡m vÃ o linh há»“n cá»§a Ä‘áº¡i ngÃ n.
             </motion.p>
           </div>
           <motion.div 
@@ -43,7 +43,7 @@ export default function Booking() {
           >
              <Button variant="outline" className="flex items-center gap-3 px-8">
                <Filter className="w-4 h-4" />
-               <span>Bộ lọc tìm kiếm</span>
+               <span>Bá»™ lá»c tÃ¬m kiáº¿m</span>
              </Button>
           </motion.div>
         </header>
@@ -61,7 +61,7 @@ export default function Booking() {
               <div className="lg:w-5/12 relative min-h-[450px] overflow-hidden">
                 <img src={tour.image} alt={tour.name} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
                 <div className="absolute top-8 left-8 bg-ethnic-indigo text-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] backdrop-blur-md">
-                   Sự lựa chọn hàng đầu
+                   Sá»± lá»±a chá»n hÃ ng Ä‘áº§u
                 </div>
               </div>
               <div className="lg:w-7/12 p-12 md:p-20 flex flex-col justify-between bg-white">
@@ -75,13 +75,13 @@ export default function Booking() {
                       </div>
                     </div>
                     <div className="md:text-right bg-earth-50 p-6 rounded-sm min-w-[200px]">
-                       <div className="text-3xl serif font-bold text-earth-900">{tour.price.toLocaleString('vi-VN')} đ</div>
-                       <div className="text-[9px] text-earth-400 font-bold uppercase tracking-[0.2em] mt-2">Giá từ / người</div>
+                       <div className="text-3xl serif font-bold text-earth-900">{tour.price.toLocaleString('vi-VN')} Ä‘</div>
+                       <div className="text-[9px] text-earth-400 font-bold uppercase tracking-[0.2em] mt-2">GiÃ¡ tá»« / ngÆ°á»i</div>
                     </div>
                   </div>
 
                   <div className="space-y-8">
-                     <h4 className="text-[10px] uppercase font-bold text-earth-400 tracking-[0.4em] pb-4 border-b border-earth-100">Trải nghiệm nổi bật trong hành trình</h4>
+                     <h4 className="text-[10px] uppercase font-bold text-earth-400 tracking-[0.4em] pb-4 border-b border-earth-100">Tráº£i nghiá»‡m ná»•i báº­t trong hÃ nh trÃ¬nh</h4>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {tour.features.map(f => (
                            <div key={f} className="flex items-center gap-4 group/item">
@@ -96,9 +96,9 @@ export default function Booking() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-6 pt-16">
-                   <Button size="lg" className="w-full sm:w-auto px-16">Giữ chỗ ngay</Button>
+                   <Button size="lg" className="w-full sm:w-auto px-16">Giá»¯ chá»— ngay</Button>
                    <Button variant="ghost" className="w-full sm:w-auto italic group">
-                      Xem lịch trình chi tiết <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      Xem lá»‹ch trÃ¬nh chi tiáº¿t <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                    </Button>
                 </div>
               </div>

@@ -3,21 +3,23 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   History, Users, Languages, Home, Utensils, 
-  Sparkles, Hammer, Calendar, Map, ChevronRight, PlayCircle, ArrowLeft
+  Sparkles, Hammer, Calendar, Map, ChevronRight, PlayCircle, ArrowLeft,
+  Quote
 } from 'lucide-react';
+
 import { ethnicGroups } from '@/src/data';
 import { cn } from '@/src/lib/utils';
 import Button from '@/src/components/ui/Button';
 
 const sections = [
-  { id: 'history', title: 'Nguồn gốc lịch sử', icon: History },
-  { id: 'groups', title: 'Nhánh dân tộc', icon: Users },
-  { id: 'language', title: 'Ngôn ngữ & Chữ viết', icon: Languages },
-  { id: 'housing', title: 'Kiến trúc nhà ở', icon: Home },
-  { id: 'food', title: 'Tinh hoa ẩm thực', icon: Utensils },
-  { id: 'beliefs', title: 'Tín ngưỡng & Tâm linh', icon: Sparkles },
-  { id: 'crafts', title: 'Nghề thủ công', icon: Hammer },
-  { id: 'festivals', title: 'Lễ hội đặc sắc', icon: Calendar },
+  { id: 'history', title: 'Nguá»“n gá»‘c lá»‹ch sá»­', icon: History },
+  { id: 'groups', title: 'NhÃ¡nh dÃ¢n tá»™c', icon: Users },
+  { id: 'language', title: 'NgÃ´n ngá»¯ & Chá»¯ viáº¿t', icon: Languages },
+  { id: 'housing', title: 'Kiáº¿n trÃºc nhÃ  á»Ÿ', icon: Home },
+  { id: 'food', title: 'Tinh hoa áº©m thá»±c', icon: Utensils },
+  { id: 'beliefs', title: 'TÃ­n ngÆ°á»¡ng & TÃ¢m linh', icon: Sparkles },
+  { id: 'crafts', title: 'Nghá» thá»§ cÃ´ng', icon: Hammer },
+  { id: 'festivals', title: 'Lá»… há»™i Ä‘áº·c sáº¯c', icon: Calendar },
 ];
 
 export default function EthnicDetail() {
@@ -31,9 +33,9 @@ export default function EthnicDetail() {
 
   if (!ethnic) return (
     <div className="pt-40 text-center h-screen bg-earth-50">
-      <h2 className="serif text-4xl mb-8">Không tìm thấy dữ liệu dân tộc.</h2>
+      <h2 className="serif text-4xl mb-8">KhÃ´ng tÃ¬m tháº¥y dá»¯ liá»‡u dÃ¢n tá»™c.</h2>
       <Link to="/ethnic">
-        <Button variant="outline">Quay lại danh sách</Button>
+        <Button variant="outline">Quay láº¡i danh sÃ¡ch</Button>
       </Link>
     </div>
   );
@@ -59,7 +61,7 @@ export default function EthnicDetail() {
           >
              <Link to="/ethnic" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors text-[10px] uppercase tracking-[0.4em] font-bold">
                <ArrowLeft className="w-4 h-4" />
-               Quay lại khám phá
+               Quay láº¡i khÃ¡m phÃ¡
              </Link>
           </motion.div>
           <motion.h1 
@@ -76,7 +78,7 @@ export default function EthnicDetail() {
             transition={{ delay: 0.5 }}
             className="text-white/80 uppercase tracking-[0.6em] font-medium text-xs md:text-sm"
           >
-            Những đứa con của gió và núi
+            Nhá»¯ng Ä‘á»©a con cá»§a giÃ³ vÃ  nÃºi
           </motion.p>
         </div>
       </div>
@@ -86,7 +88,7 @@ export default function EthnicDetail() {
           {/* Sticky Sidebar Navigation */}
           <aside className="lg:w-1/3">
             <div className="sticky top-32 bg-white p-10 rounded-sm premium-shadow border border-earth-100">
-              <h3 className="serif text-3xl mb-10 pb-6 border-b border-earth-100 italic">Mục lục di sản</h3>
+              <h3 className="serif text-3xl mb-10 pb-6 border-b border-earth-100 italic">Má»¥c lá»¥c di sáº£n</h3>
               <div className="space-y-3">
                 {sections.map((section) => (
                   <button
@@ -117,9 +119,9 @@ export default function EthnicDetail() {
               <div className="mt-12 pt-10 border-t border-earth-100">
                  <div className="bg-earth-50 p-6 rounded-sm">
                     <p className="text-xs text-earth-500 italic leading-relaxed mb-6">
-                      Bạn muốn trải nghiệm trực tiếp văn hoá {ethnic.name}?
+                      Báº¡n muá»‘n tráº£i nghiá»‡m trá»±c tiáº¿p vÄƒn hoÃ¡ {ethnic.name}?
                     </p>
-                    <Button variant="secondary" className="w-full text-[10px]">Đặt tour văn hoá</Button>
+                    <Button variant="secondary" className="w-full text-[10px]">Äáº·t tour vÄƒn hoÃ¡</Button>
                  </div>
               </div>
             </div>
@@ -142,7 +144,7 @@ export default function EthnicDetail() {
                     {sections.find(s => s.id === activeTab)?.icon({ className: "w-8 h-8 text-earth-900" })}
                   </div>
                   <div>
-                    <span className="text-terracotta font-bold text-[9px] uppercase tracking-[0.4em] mb-2 block">Kiến thức chuyên sâu</span>
+                    <span className="text-terracotta font-bold text-[9px] uppercase tracking-[0.4em] mb-2 block">Kiáº¿n thá»©c chuyÃªn sÃ¢u</span>
                     <h2 className="text-5xl serif italic">{sections.find(s => s.id === activeTab)?.title}</h2>
                   </div>
                 </div>
@@ -152,18 +154,18 @@ export default function EthnicDetail() {
                   {activeTab === 'history' && (
                     <div className="space-y-10">
                       <p className="text-2xl text-earth-800 font-serif italic leading-relaxed border-l-4 border-earth-100 pl-10">
-                        Lịch sử của người {ethnic.name} là bản anh hùng ca về sự kiên cường và lòng yêu tự do. Trải qua những cuộc di cư vĩ đại, họ đã chọn những đỉnh núi cao nhất làm quê hương.
+                        Lá»‹ch sá»­ cá»§a ngÆ°á»i {ethnic.name} lÃ  báº£n anh hÃ¹ng ca vá» sá»± kiÃªn cÆ°á»ng vÃ  lÃ²ng yÃªu tá»± do. Tráº£i qua nhá»¯ng cuá»™c di cÆ° vÄ© Ä‘áº¡i, há» Ä‘Ã£ chá»n nhá»¯ng Ä‘á»‰nh nÃºi cao nháº¥t lÃ m quÃª hÆ°Æ¡ng.
                       </p>
                       <div className="py-12 border-l-2 border-earth-100 ml-4 pl-12 space-y-16">
                         <div className="relative">
                           <div className="absolute -left-[57px] top-0 w-6 h-6 rounded-full bg-white border-4 border-earth-900 shadow-lg" />
-                          <h4 className="text-2xl serif italic mb-4">Giai đoạn khởi thuỷ</h4>
-                          <p className="text-earth-600 leading-relaxed italic">Những cộng đồng đầu tiên hình thành tại vùng bình nguyên phía Bắc trước khi bắt đầu hành trình chinh phục các dãy núi cao.</p>
+                          <h4 className="text-2xl serif italic mb-4">Giai Ä‘oáº¡n khá»Ÿi thuá»·</h4>
+                          <p className="text-earth-600 leading-relaxed italic">Nhá»¯ng cá»™ng Ä‘á»“ng Ä‘áº§u tiÃªn hÃ¬nh thÃ nh táº¡i vÃ¹ng bÃ¬nh nguyÃªn phÃ­a Báº¯c trÆ°á»›c khi báº¯t Ä‘áº§u hÃ nh trÃ¬nh chinh phá»¥c cÃ¡c dÃ£y nÃºi cao.</p>
                         </div>
                         <div className="relative">
                           <div className="absolute -left-[57px] top-0 w-6 h-6 rounded-full bg-white border-4 border-earth-400 shadow-lg" />
-                          <h4 className="text-2xl serif italic mb-4">Định cư & Thích nghi</h4>
-                          <p className="text-earth-600 leading-relaxed italic">Xác lập kỹ thuật canh tác ruộng bậc thang và rèn đúc, tạo nên nền tảng kinh tế vững chắc cho các bản làng trên mây.</p>
+                          <h4 className="text-2xl serif italic mb-4">Äá»‹nh cÆ° & ThÃ­ch nghi</h4>
+                          <p className="text-earth-600 leading-relaxed italic">XÃ¡c láº­p ká»¹ thuáº­t canh tÃ¡c ruá»™ng báº­c thang vÃ  rÃ¨n Ä‘Ãºc, táº¡o nÃªn ná»n táº£ng kinh táº¿ vá»¯ng cháº¯c cho cÃ¡c báº£n lÃ ng trÃªn mÃ¢y.</p>
                         </div>
                       </div>
                     </div>
@@ -182,7 +184,7 @@ export default function EthnicDetail() {
                           </div>
                           <h4 className="text-3xl serif italic mb-4">{group}</h4>
                           <p className="text-earth-600 text-sm italic font-serif leading-relaxed">
-                            Mỗi nhánh có những đặc trưng riêng biệt trong cách thêu thùa, vấn khăn và các nghi lễ thờ cúng tổ tiên.
+                            Má»—i nhÃ¡nh cÃ³ nhá»¯ng Ä‘áº·c trÆ°ng riÃªng biá»‡t trong cÃ¡ch thÃªu thÃ¹a, váº¥n khÄƒn vÃ  cÃ¡c nghi lá»… thá» cÃºng tá»• tiÃªn.
                           </p>
                         </div>
                       ))}
@@ -194,17 +196,17 @@ export default function EthnicDetail() {
                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                           <div className="space-y-6">
                              <div className="aspect-video overflow-hidden rounded-sm premium-shadow">
-                                <img src="https://images.unsplash.com/photo-1543739446-402a5d211830?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="Thắng cố" />
+                                <img src="https://images.unsplash.com/photo-1543739446-402a5d211830?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="Tháº¯ng cá»‘" />
                              </div>
-                             <h4 className="text-3xl serif italic">Thắng cố & Rượu ngô</h4>
-                             <p className="text-earth-600 text-sm italic font-serif leading-relaxed">Món ăn mang đậm hơi thở của núi rừng, là sự kết hợp của thảo quả, quế và các loại gia vị đặc hữu.</p>
+                             <h4 className="text-3xl serif italic">Tháº¯ng cá»‘ & RÆ°á»£u ngÃ´</h4>
+                             <p className="text-earth-600 text-sm italic font-serif leading-relaxed">MÃ³n Äƒn mang Ä‘áº­m hÆ¡i thá»Ÿ cá»§a nÃºi rá»«ng, lÃ  sá»± káº¿t há»£p cá»§a tháº£o quáº£, quáº¿ vÃ  cÃ¡c loáº¡i gia vá»‹ Ä‘áº·c há»¯u.</p>
                           </div>
                           <div className="space-y-6">
                              <div className="aspect-video overflow-hidden rounded-sm premium-shadow">
-                                <img src="https://images.unsplash.com/photo-1555543714-3aee565b0907?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="Mèn mén" />
+                                <img src="https://images.unsplash.com/photo-1555543714-3aee565b0907?auto=format&fit=crop&q=80&w=800" className="w-full h-full object-cover" alt="MÃ¨n mÃ©n" />
                              </div>
-                             <h4 className="text-3xl serif italic">Mèn mén (Cơm ngô)</h4>
-                             <p className="text-earth-600 text-sm italic font-serif leading-relaxed">Món ăn truyền thống thay cơm, được đồ công phu từ những hạt ngô nương ngon nhất.</p>
+                             <h4 className="text-3xl serif italic">MÃ¨n mÃ©n (CÆ¡m ngÃ´)</h4>
+                             <p className="text-earth-600 text-sm italic font-serif leading-relaxed">MÃ³n Äƒn truyá»n thá»‘ng thay cÆ¡m, Ä‘Æ°á»£c Ä‘á»“ cÃ´ng phu tá»« nhá»¯ng háº¡t ngÃ´ nÆ°Æ¡ng ngon nháº¥t.</p>
                           </div>
                        </div>
                     </div>
@@ -215,17 +217,17 @@ export default function EthnicDetail() {
                       <div className="bg-earth-900 text-white p-12 md:p-20 rounded-sm relative overflow-hidden premium-shadow">
                          <div className="relative z-10 max-w-xl">
                             <Quote className="w-12 h-12 text-gold/20 mb-8" />
-                            <h4 className="text-4xl serif italic mb-8 leading-tight">"Mỗi đường kim mũi chỉ là một lời kể về cuộc đời."</h4>
+                            <h4 className="text-4xl serif italic mb-8 leading-tight">"Má»—i Ä‘Æ°á»ng kim mÅ©i chá»‰ lÃ  má»™t lá»i ká»ƒ vá» cuá»™c Ä‘á»i."</h4>
                             <p className="text-earth-300 italic text-xl leading-relaxed mb-10 font-serif">
-                              Chúng tôi không chỉ dệt vải, chúng tôi đang viết tiếp câu chuyện của tổ tiên lên từng tấm thổ cẩm chàm.
+                              ChÃºng tÃ´i khÃ´ng chá»‰ dá»‡t váº£i, chÃºng tÃ´i Ä‘ang viáº¿t tiáº¿p cÃ¢u chuyá»‡n cá»§a tá»• tiÃªn lÃªn tá»«ng táº¥m thá»• cáº©m chÃ m.
                             </p>
                             <div className="flex items-center space-x-6">
                               <div className="w-16 h-16 rounded-full border-2 border-gold/30 overflow-hidden bg-earth-800">
                                  <img src="https://images.unsplash.com/photo-1543739446-402a5d211830?auto=format&fit=crop&q=80&w=200" className="w-full h-full object-cover opacity-60" />
                               </div>
                               <div>
-                                 <p className="text-xl serif italic font-bold">Bà Vàng Thị Mai</p>
-                                 <p className="text-[9px] text-gold uppercase tracking-[0.2em] font-bold">Nghệ nhân ưu tú</p>
+                                 <p className="text-xl serif italic font-bold">BÃ  VÃ ng Thá»‹ Mai</p>
+                                 <p className="text-[9px] text-gold uppercase tracking-[0.2em] font-bold">Nghá»‡ nhÃ¢n Æ°u tÃº</p>
                               </div>
                             </div>
                          </div>
@@ -244,8 +246,8 @@ export default function EthnicDetail() {
                           <Sparkles className="w-16 h-16 text-earth-200 mx-auto" />
                         </motion.div>
                         <div className="space-y-2">
-                           <p className="text-earth-800 serif text-2xl italic">Đang cập nhật di sản...</p>
-                           <p className="text-earth-400 text-sm italic font-serif">Các chuyên gia văn hoá đang hoàn thiện dữ liệu cho mục này.</p>
+                           <p className="text-earth-800 serif text-2xl italic">Äang cáº­p nháº­t di sáº£n...</p>
+                           <p className="text-earth-400 text-sm italic font-serif">CÃ¡c chuyÃªn gia vÄƒn hoÃ¡ Ä‘ang hoÃ n thiá»‡n dá»¯ liá»‡u cho má»¥c nÃ y.</p>
                         </div>
                      </div>
                   )}
@@ -254,9 +256,9 @@ export default function EthnicDetail() {
                 <div className="pt-20 border-t border-earth-100 flex flex-col sm:flex-row justify-between items-center gap-8">
                   <Link to="/ethnic" className="text-earth-400 hover:text-earth-900 transition-colors uppercase tracking-[0.3em] text-[10px] font-bold flex items-center gap-3">
                     <ArrowLeft className="w-4 h-4" />
-                    Quay lại danh sách
+                    Quay láº¡i danh sÃ¡ch
                   </Link>
-                  <Button variant="secondary" className="w-full sm:w-auto">Khám phá trải nghiệm liên quan</Button>
+                  <Button variant="secondary" className="w-full sm:w-auto">KhÃ¡m phÃ¡ tráº£i nghiá»‡m liÃªn quan</Button>
                 </div>
               </motion.div>
             </AnimatePresence>

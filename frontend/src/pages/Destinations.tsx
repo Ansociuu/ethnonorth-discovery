@@ -15,7 +15,7 @@ export default function Destinations() {
             className="inline-flex items-center gap-2 text-terracotta text-[10px] font-bold uppercase tracking-[0.4em] mb-8"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Địa danh di sản</span>
+            <span>Äá»‹a danh di sáº£n</span>
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export default function Destinations() {
             transition={{ delay: 0.1 }}
             className="text-6xl md:text-8xl mb-8 serif leading-none"
           >
-            Những vùng đất <br /> <span className="italic font-light text-earth-400">huyền thoại</span>
+            Nhá»¯ng vÃ¹ng Ä‘áº¥t <br /> <span className="italic font-light text-earth-400">huyá»n thoáº¡i</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -31,7 +31,7 @@ export default function Destinations() {
             transition={{ delay: 0.2 }}
             className="text-earth-600 text-xl italic font-serif leading-relaxed"
           >
-            Từ những đỉnh núi mờ sương của Sa Pa đến cao nguyên đá Hà Giang hùng vĩ, mỗi vùng đất đều ẩn chứa những câu chuyện cổ tích.
+            Tá»« nhá»¯ng Ä‘á»‰nh nÃºi má» sÆ°Æ¡ng cá»§a Sa Pa Ä‘áº¿n cao nguyÃªn Ä‘Ã¡ HÃ  Giang hÃ¹ng vÄ©, má»—i vÃ¹ng Ä‘áº¥t Ä‘á»u áº©n chá»©a nhá»¯ng cÃ¢u chuyá»‡n cá»• tÃ­ch.
           </motion.p>
         </header>
 
@@ -59,7 +59,7 @@ export default function Destinations() {
                   
                   <div className="space-y-8">
                     <div>
-                      <h4 className="text-[9px] uppercase font-bold text-earth-400 tracking-[0.3em] mb-4">Cộng đồng dân tộc</h4>
+                      <h4 className="text-[9px] uppercase font-bold text-earth-400 tracking-[0.3em] mb-4">Cá»™ng Ä‘á»“ng dÃ¢n tá»™c</h4>
                       <div className="flex flex-wrap gap-2">
                         {dest.ethnicGroups.map(e => (
                           <span key={e} className="px-3 py-1 bg-earth-50 text-earth-700 border border-earth-100 rounded-sm text-[9px] font-bold uppercase tracking-widest">{e}</span>
@@ -67,7 +67,7 @@ export default function Destinations() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-[9px] uppercase font-bold text-earth-400 tracking-[0.3em] mb-4">Trải nghiệm tiêu biểu</h4>
+                      <h4 className="text-[9px] uppercase font-bold text-earth-400 tracking-[0.3em] mb-4">Tráº£i nghiá»‡m tiÃªu biá»ƒu</h4>
                       <ul className="space-y-3">
                         {dest.experiences.map(exp => (
                           <li key={exp} className="flex items-center text-sm font-serif italic text-earth-800">
@@ -81,9 +81,9 @@ export default function Destinations() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 pt-12">
-                   <Button variant="secondary" className="w-full text-[10px]">Khám phá văn hoá {dest.name}</Button>
+                   <Button variant="secondary" className="w-full text-[10px]">KhÃ¡m phÃ¡ vÄƒn hoÃ¡ {dest.name}</Button>
                    <Button variant="outline" className="w-full text-[10px] italic group">
-                      Xem các Tour liên quan <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      Xem cÃ¡c Tour liÃªn quan <ArrowRight className="ml-2 w-3 h-3 group-hover:translate-x-1 transition-transform" />
                    </Button>
                 </div>
               </div>
