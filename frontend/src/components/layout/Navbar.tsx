@@ -85,7 +85,7 @@ export default function Navbar() {
                )}>
                  <Search className="w-4 h-4" />
                </button>
-               <button className={cn(
+               <Link to="/login" className={cn(
                  "flex items-center space-x-2 px-5 py-2.5 rounded-full text-[10px] uppercase font-bold tracking-widest transition-all duration-300",
                  scrolled 
                   ? "bg-earth-900 text-white hover:bg-earth-800" 
@@ -93,7 +93,7 @@ export default function Navbar() {
                )}>
                  <User className="w-3.5 h-3.5" />
                  <span>Tài khoản</span>
-               </button>
+               </Link>
             </div>
           </div>
 
@@ -157,9 +157,13 @@ export default function Navbar() {
             </div>
 
             <div className="mt-auto pt-12 border-t border-white/10">
-               <button className="w-full py-4 bg-terracotta text-white font-bold uppercase tracking-widest text-xs rounded-sm">
+               <Link 
+                 to="/login"
+                 onClick={() => setIsOpen(false)}
+                 className="block text-center w-full py-4 bg-terracotta text-white font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-terracotta-dark transition-colors"
+               >
                   Đăng nhập / Đăng ký
-               </button>
+               </Link>
             </div>
           </motion.div>
         )}

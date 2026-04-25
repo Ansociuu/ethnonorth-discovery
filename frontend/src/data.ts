@@ -262,8 +262,8 @@ export const tours = [
     longDescription: 'Một chuyến đi đánh thức mọi giác quan tại thị trấn sương mù Sa Pa. Khác với những cung đường du lịch đại trà, hành trình này sẽ đưa bạn luồn sâu vào các bản làng nguyên sơ của người H\'Mông Đen và Dao Đỏ. Bạn sẽ được đi bộ qua những thửa ruộng bậc thang kỳ vĩ ở thung lũng Mường Hoa, ngâm mình trong bài thuốc lá bí truyền của người Dao, và đứng trên đỉnh Fansipan hùng vĩ để ngắm biển mây cuồn cuộn.',
     gallery: [
       'https://res.cloudinary.com/drvjjrsah/image/upload/v1777069062/hiephoang-sapa-3851735_1920_oezbrd.jpg',
-      'https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/08/lao-chai-ta-van.jpg',
-      'https://mia.vn/media/uploads/blog-du-lich/ta-phin-sapa-1-1644315243.jpg'
+      'https://mia.vn/media/uploads/blog-du-lich/ban-ta-phin-ban-lang-hoang-so-moc-mac-giua-nui-rung-tay-bac-2-1620746166.jpg',
+      'https://dacsantaybac.vn/wp-content/uploads/2025/01/Dinh-Fansipan-hay-con-duoc-viet-va-goi-la-Phan-Si-Pang-Phan-Xi-Pang-hay-Hua-Xi-Pan-Anh-tu-Nguyen-Bo-Guyen.jpg'
     ],
     itinerary: [
       {
@@ -292,9 +292,9 @@ export const tours = [
     locations: ['Đồng Văn', 'Mèo Vạc', 'Yên Minh'],
     longDescription: 'Chuyến đi của thanh xuân và lòng quả cảm. Vòng cung Hà Giang (Hà Giang Loop) là một trong những cung đường đẹp và ngoạn mục nhất Đông Nam Á. Bạn sẽ chạy xe qua những dãy núi đá tai mèo xám xịt kéo dài tận chân trời, vượt qua dốc Thẩm Mã huyền thoại, check-in tại Dinh thự Vua Mèo bí ẩn, và đi thuyền dọc hẻm tu Sản kỳ vĩ ngắm dòng Nho Quế xanh ngắt.',
     gallery: [
-      'https://res.cloudinary.com/drvjjrsah/image/upload/v1777069062/xuanduongvan87-ha-giang-7947012_1920_don4pk.jpg',
-      'https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/08/ma-pi-leng.jpg',
-      'https://mia.vn/media/uploads/blog-du-lich/song-nho-que-ha-giang-1-1647413669.jpg'
+      'https://mia.vn/media/uploads/blog-du-lich/lac-troi-giua-chon-tien-canh-nhan-gian-tai-cong-troi-quan-ba-ha-giang-02-1642145295.jpg',
+      'https://pystravel.vn/_next/image?url=https%3A%2F%2Fbooking.pystravel.vn%2Fuploads%2Fposts%2Falbums%2F16826%2F1278eda1027be0afbb164e8d37612f05.png&w=1920&q=75',
+      'https://mia.vn/media/uploads/blog-du-lich/review-ma-pi-leng-song-nho-que-va-ve-dep-nuc-long-nguoi-3-1644146685.jpg'
     ],
     itinerary: [
       {

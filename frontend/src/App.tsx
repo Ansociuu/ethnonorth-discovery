@@ -18,6 +18,8 @@ import TourDetail from '@/src/pages/TourDetail';
 import BookingRequest from '@/src/pages/BookingRequest';
 import Success from '@/src/pages/Success';
 import Community from '@/src/pages/Community';
+import Login from '@/src/pages/Login';
+import Register from '@/src/pages/Register';
 
 export default function App() {
   return (
@@ -41,7 +43,8 @@ export default function App() {
           <Route path="community" element={<Community />} />
           <Route path="success" element={<Success />} />
         </Route>
-
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
