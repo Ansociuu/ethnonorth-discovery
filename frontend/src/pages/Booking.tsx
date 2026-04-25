@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Filter, Star, Clock, MapPin, Sparkles, ChevronRight } from 'lucide-react';
 import { tours } from '@/src/data';
 import Button from '@/src/components/ui/Button';
@@ -16,7 +17,7 @@ export default function Booking() {
               className="inline-flex items-center gap-2 text-terracotta text-[10px] font-bold uppercase tracking-[0.4em] mb-8"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>HÃ nh trÃ¬nh di sáº£n tÃ¹y chá»n</span>
+              <span>Hành trình di sản tuỳ chọn</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
@@ -24,7 +25,7 @@ export default function Booking() {
               transition={{ delay: 0.1 }}
               className="text-6xl md:text-8xl mb-8 serif leading-none"
             >
-              Thiáº¿t káº¿ <br /> <span className="italic font-light text-earth-400">hÃ nh trÃ¬nh riÃªng</span>
+              Thiết kế <br /> <span className="italic font-light text-earth-400">hành trình riêng</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0 }}
@@ -32,7 +33,7 @@ export default function Booking() {
               transition={{ delay: 0.2 }}
               className="text-earth-600 text-xl italic font-serif leading-relaxed"
             >
-              Chá»n lá»c nhá»¯ng lá»‹ch trÃ¬nh Ä‘Æ°á»£c thiáº¿t káº¿ tá»‰ má»‰ bá»Ÿi cÃ¡c chuyÃªn gia vÄƒn hoÃ¡ Ä‘á»ƒ cháº¡m vÃ o linh há»“n cá»§a Ä‘áº¡i ngÃ n.
+              Chọn lọc những lịch trình được thiết kế tỉ mỉ bởi các chuyên gia văn hoá để chạm vào linh hồn của đại ngàn.
             </motion.p>
           </div>
           <motion.div 
@@ -43,12 +44,12 @@ export default function Booking() {
           >
              <Button variant="outline" className="flex items-center gap-3 px-8">
                <Filter className="w-4 h-4" />
-               <span>Bá»™ lá»c tÃ¬m kiáº¿m</span>
+               <span>Bộ lọc tìm kiếm</span>
              </Button>
           </motion.div>
         </header>
 
-        <div className="grid grid-cols-1 gap-20 lg:gap-32">
+        <div className="grid grid-cols-1 gap-16 lg:gap-24">
           {tours.map((tour, idx) => (
             <motion.div 
               key={tour.id}
@@ -58,30 +59,30 @@ export default function Booking() {
               transition={{ duration: 1 }}
               className="flex flex-col lg:flex-row bg-earth-50/50 rounded-sm overflow-hidden premium-shadow border border-earth-100 group"
             >
-              <div className="lg:w-5/12 relative min-h-[450px] overflow-hidden">
+              <div className="lg:w-4/12 relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
                 <img src={tour.image} alt={tour.name} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
-                <div className="absolute top-8 left-8 bg-ethnic-indigo text-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] backdrop-blur-md">
-                   Sá»± lá»±a chá»n hÃ ng Ä‘áº§u
+                <div className="absolute top-6 left-6 bg-ethnic-indigo text-white px-4 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] backdrop-blur-md">
+                   Sự lựa chọn hàng đầu
                 </div>
               </div>
-              <div className="lg:w-7/12 p-12 md:p-20 flex flex-col justify-between bg-white">
-                <div className="space-y-12">
-                  <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+              <div className="lg:w-8/12 p-8 md:p-12 lg:p-16 flex flex-col justify-between bg-white">
+                <div className="space-y-8">
+                  <div className="flex flex-col md:flex-row justify-between items-start gap-6">
                     <div>
-                      <h2 className="text-4xl md:text-5xl serif italic mb-6 leading-tight">{tour.name}</h2>
-                      <div className="flex flex-wrap items-center gap-8 text-earth-500 text-[11px] font-bold uppercase tracking-widest">
+                      <h2 className="text-3xl md:text-4xl serif italic mb-4 leading-tight">{tour.name}</h2>
+                      <div className="flex flex-wrap items-center gap-6 text-earth-500 text-[11px] font-bold uppercase tracking-widest">
                         <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-terracotta" /> {tour.duration}</span>
                         <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-terracotta" /> {tour.locations.join(', ')}</span>
                       </div>
                     </div>
-                    <div className="md:text-right bg-earth-50 p-6 rounded-sm min-w-[200px]">
-                       <div className="text-3xl serif font-bold text-earth-900">{tour.price.toLocaleString('vi-VN')} Ä‘</div>
-                       <div className="text-[9px] text-earth-400 font-bold uppercase tracking-[0.2em] mt-2">GiÃ¡ tá»« / ngÆ°á»i</div>
+                    <div className="md:text-right bg-earth-50 p-5 rounded-sm min-w-[180px]">
+                       <div className="text-2xl serif font-bold text-earth-900">{tour.price.toLocaleString('vi-VN')} đ</div>
+                       <div className="text-[9px] text-earth-400 font-bold uppercase tracking-[0.2em] mt-1">Giá từ / người</div>
                     </div>
                   </div>
 
-                  <div className="space-y-8">
-                     <h4 className="text-[10px] uppercase font-bold text-earth-400 tracking-[0.4em] pb-4 border-b border-earth-100">Tráº£i nghiá»‡m ná»•i báº­t trong hÃ nh trÃ¬nh</h4>
+                  <div className="space-y-6">
+                     <h4 className="text-[10px] uppercase font-bold text-earth-400 tracking-[0.4em] pb-3 border-b border-earth-100">Trải nghiệm nổi bật trong hành trình</h4>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {tour.features.map(f => (
                            <div key={f} className="flex items-center gap-4 group/item">
@@ -96,10 +97,14 @@ export default function Booking() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-6 pt-16">
-                   <Button size="lg" className="w-full sm:w-auto px-16">Giá»¯ chá»— ngay</Button>
-                   <Button variant="ghost" className="w-full sm:w-auto italic group">
-                      Xem lá»‹ch trÃ¬nh chi tiáº¿t <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                   </Button>
+                   <Link to={`/booking/${tour.id}`}>
+                     <Button size="lg" className="w-full sm:w-auto px-16">Giữ chỗ ngay</Button>
+                   </Link>
+                   <Link to={`/booking/${tour.id}`}>
+                     <Button variant="ghost" className="w-full sm:w-auto italic group">
+                        Xem lịch trình chi tiết <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                     </Button>
+                   </Link>
                 </div>
               </div>
             </motion.div>

@@ -5,15 +5,15 @@ import Button from '@/src/components/ui/Button';
 
 const communityStories = [
   {
-    name: 'SÃ¹ng A Phá»§',
-    role: 'Chá»§ Homestay táº¡i Táº£ PhÃ¬n',
-    story: 'HÆ¡n 10 nÄƒm trÆ°á»›c tÃ´i vá» quÃª, mong muá»‘n giá»¯ láº¡i náº¿p nhÃ  cá»• cá»§a cha Ã´ng. Giá» Ä‘Ã¢y, ngÃ´i nhÃ  Ä‘Ã£ trá»Ÿ thÃ nh nÆ¡i dá»«ng chÃ¢n cho hÃ ng ngÃ n du khÃ¡ch quá»‘c táº¿ muá»‘n tÃ¬m hiá»ƒu vá» vÄƒn hoÃ¡ Dao Äá».',
+    name: 'Sùng A Phủ',
+    role: 'Chủ Homestay tại Tả Phìn',
+    story: 'Hơn 10 năm trước tôi về quê, mong muốn giữ lại nếp nhà cổ của cha ông. Giờ đây, ngôi nhà đã trở thành nơi dừng chân cho hàng ngàn du khách quốc tế muốn tìm hiểu về văn hoá Dao Đỏ.',
     image: 'https://images.unsplash.com/photo-1543739446-402a5d211830?auto=format&fit=crop&q=80&w=400',
   },
   {
-    name: 'LÃ½ Thá»‹ May',
-    role: 'Nghá»‡ nhÃ¢n dá»‡t lanh',
-    story: 'Con gÃ¡i Hâ€™Mong chÃºng tÃ´i ai cÅ©ng pháº£i biáº¿t dá»‡t lanh. ÄÃ³ lÃ  há»“n cá»‘t cá»§a dÃ¢n tá»™c. TÃ´i Ä‘Ã£ dáº¡y nghá» cho hÆ¡n 40 chá»‹ em trong báº£n Ä‘á»ƒ cÃ¹ng nhau giá»¯ nghá» vÃ  tÄƒng thÃªm thu nháº­p.',
+    name: 'Lý Thị May',
+    role: 'Nghệ nhân dệt lanh',
+    story: 'Con gái H’Mong chúng tôi ai cũng phải biết dệt lanh. Đó là hồn cốt của dân tộc. Tôi đã dạy nghề cho hơn 40 chị em trong bản để cùng nhau giữ nghề và tăng thêm thu nhập.',
     image: 'https://images.unsplash.com/photo-1555543714-3aee565b0907?auto=format&fit=crop&q=80&w=400',
   },
 ];
@@ -23,8 +23,8 @@ export default function Community() {
     <div className="pt-32 pb-24 bg-earth-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-24 text-center max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-6xl mb-6">Káº¿t ná»‘i cá»™ng Ä‘á»“ng</h1>
-          <p className="text-earth-600 text-lg italic">Nhá»¯ng cÃ¢u chuyá»‡n tá»« chÃ­nh nhá»¯ng ngÆ°á»i dÃ¢n báº£n Ä‘á»‹a - nhá»¯ng ngÆ°á»i giá»¯ lá»­a vÃ  truyá»n táº£i di sáº£n vÃ¹ng cao.</p>
+          <h1 className="text-5xl md:text-6xl mb-6">Kết nối cộng đồng</h1>
+          <p className="text-earth-600 text-lg italic">Những câu chuyện từ chính những người dân bản địa - những người giữ lửa và truyền tải di sản vùng cao.</p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
@@ -34,7 +34,7 @@ export default function Community() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-12 rounded-sm shadow-xl flex flex-col md:row items-center gap-12 relative overflow-hidden"
+              className="bg-white p-12 rounded-sm shadow-xl flex flex-col md:flex-row items-center gap-12 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5">
                  <Quote className="w-32 h-32" />
@@ -51,7 +51,7 @@ export default function Community() {
                  <p className="text-earth-700 italic text-lg leading-relaxed">"{item.story}"</p>
                  <Button variant="ghost" className="px-0 flex items-center space-x-2 text-xs uppercase tracking-widest font-bold">
                     <MessageSquare className="w-4 h-4" />
-                    <span>Xem cÃ¢u chuyá»‡n Ä‘áº§y Ä‘á»§</span>
+                    <span>Xem câu chuyện đầy đủ</span>
                  </Button>
               </div>
             </motion.div>
@@ -62,13 +62,13 @@ export default function Community() {
         <div className="bg-earth-950 rounded-sm p-12 md:p-24 text-center text-white space-y-10 relative overflow-hidden">
            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
               <Users className="w-16 h-16 text-earth-500 mx-auto" />
-              <h2 className="text-4xl md:text-5xl italic">Báº£n lÃ ng Ä‘ang chá» Ä‘Ã³n báº¡n</h2>
+              <h2 className="text-4xl md:text-5xl italic">Bản làng đang chờ đón bạn</h2>
               <p className="text-earth-300 text-lg leading-relaxed italic">
-                 "Má»™t ngÃ y lÃ m ngÆ°á»i báº£n Ä‘á»‹a" khÃ´ng chá»‰ lÃ  tráº£i nghiá»‡m, Ä‘Ã³ lÃ  sá»± sáº» chia vÃ  tháº¥u hiá»ƒu. HaÌƒy cuÌ€ng chuÌng tÃ´i xÃ¢y dá»±ng mÃ´Ì£t cÃ´Ì£ng Ä‘Ã´Ì€ng du liÌ£ch bÃªÌ€n vÆ°Ìƒng vaÌ€ coÌ traÌch nhiÃªÌ£m.
+                 "Một ngày làm người bản địa" không chỉ là trải nghiệm, đó là sự sẻ chia và thấu hiểu. Hãy cùng chúng tôi xây dựng một cộng đồng du lịch bền vững và có trách nhiệm.
               </p>
-              <div className="flex flex-col md:row items-center justify-center gap-4 pt-6">
-                 <Button size="lg" className="w-full md:w-auto px-12">Tham gia cá»™ng Ä‘á»“ng</Button>
-                 <Button variant="outline" size="lg" className="w-full md:w-auto text-white border-white/20 hover:bg-white/10">Viáº¿t cÃ¢u chuyá»‡n cá»§a báº¡n</Button>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 pt-6">
+                 <Button size="lg" className="w-full md:w-auto px-12">Tham gia cộng đồng</Button>
+                 <Button variant="outline" size="lg" className="w-full md:w-auto text-white border-white/20 hover:bg-white/10">Viết câu chuyện của bạn</Button>
               </div>
            </div>
            {/* Abstract patterns background */}

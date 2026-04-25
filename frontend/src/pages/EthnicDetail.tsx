@@ -27,6 +27,7 @@ export default function EthnicDetail() {
   const ethnic = ethnicGroups?.find(e => e?.id === id);
   const [activeTab, setActiveTab] = useState('overview');
   const heroRef = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -39,6 +40,20 @@ export default function EthnicDetail() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  useEffect(() => {
+    // Scroll to the top of the content area when switching tabs
+    // but only if we are below the content area
+    if (contentRef.current) {
+      const rect = contentRef.current.getBoundingClientRect();
+      if (rect.top < 0) {
+        window.scrollTo({
+          top: window.scrollY + rect.top - 100, // 100px padding for the sticky navbar
+          behavior: 'smooth'
+        });
+      }
+    }
+  }, [activeTab]);
 
   if (!ethnic) return (
     <div className="pt-40 text-center h-screen bg-earth-50 flex flex-col items-center justify-center">
@@ -140,7 +155,7 @@ export default function EthnicDetail() {
         </motion.div>
       </div>
 
-      <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+      <div ref={contentRef} className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
           {/* Sticky Sidebar Navigation */}

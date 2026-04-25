@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { ShoppingBag, Heart, Share2, Sparkles } from 'lucide-react';
 import { products } from '@/src/data';
 import Button from '@/src/components/ui/Button';
@@ -15,7 +16,7 @@ export default function Shop() {
             className="inline-flex items-center gap-2 text-terracotta text-[10px] font-bold uppercase tracking-[0.4em] mb-8"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Gian hÃ ng di sáº£n báº£n Ä‘á»‹a</span>
+            <span>Gian hàng di sản bản địa</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -23,7 +24,7 @@ export default function Shop() {
             transition={{ delay: 0.1 }}
             className="text-6xl md:text-8xl mb-8 serif italic leading-none"
           >
-            Gian hÃ ng <br /><span className="font-light text-earth-400">báº£n sáº¯c</span>
+            Gian hàng <br /><span className="font-light text-earth-400">bản sắc</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -31,11 +32,11 @@ export default function Shop() {
             transition={{ delay: 0.2 }}
             className="text-earth-600 text-xl italic font-serif leading-relaxed max-w-2xl mx-auto"
           >
-            NÆ¡i nhá»¯ng giÃ¡ trá»‹ thá»§ cÃ´ng truyá»n thá»‘ng Ä‘Æ°á»£c tÃ´n vinh. Má»—i sáº£n pháº©m lÃ  má»™t cÃ¢u chuyá»‡n vá» tÃ¬nh yÃªu di sáº£n cá»§a cÃ¡c nghá»‡ nhÃ¢n vÃ¹ng cao.
+            Nơi những giá trị thủ công truyền thống được tôn vinh. Mỗi sản phẩm là một câu chuyện về tình yêu di sản của các nghệ nhân vùng cao.
           </motion.p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {products.map((product, idx) => (
             <motion.div 
               key={product.id}
@@ -45,14 +46,14 @@ export default function Shop() {
               transition={{ delay: idx * 0.1 }}
               className="group flex flex-col h-full"
             >
-              <div className="relative aspect-square overflow-hidden bg-white premium-shadow rounded-sm mb-10">
+              <div className="relative aspect-square overflow-hidden bg-white premium-shadow rounded-sm mb-6">
                  <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" />
                  <div className="absolute top-6 right-6 space-y-3 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
-                    <button className="w-12 h-12 bg-white/90 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center hover:bg-earth-900 hover:text-white transition-colors">
-                      <Heart className="w-5 h-5" />
+                    <button className="w-10 h-10 bg-white/90 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center hover:bg-earth-900 hover:text-white transition-colors">
+                      <Heart className="w-4 h-4" />
                     </button>
-                    <button className="w-12 h-12 bg-white/90 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center hover:bg-earth-900 hover:text-white transition-colors">
-                      <Share2 className="w-5 h-5" />
+                    <button className="w-10 h-10 bg-white/90 backdrop-blur-md rounded-full shadow-lg flex items-center justify-center hover:bg-earth-900 hover:text-white transition-colors">
+                      <Share2 className="w-4 h-4" />
                     </button>
                  </div>
                  <div className="absolute bottom-6 left-6">
@@ -61,23 +62,25 @@ export default function Shop() {
               </div>
 
               <div className="flex-grow flex flex-col px-2">
-                <div className="flex justify-between items-start mb-8">
+                <div className="flex justify-between items-start mb-6 gap-4">
                    <div className="space-y-2">
                       <span className="text-[10px] text-earth-400 uppercase font-bold tracking-[0.3em]">{product.category}</span>
-                      <h3 className="text-3xl serif italic leading-tight">{product.name}</h3>
-                      <p className="text-[11px] text-earth-500 font-medium tracking-wide italic">Nguá»“n gá»‘c: {product.origin}</p>
+                      <h3 className="text-2xl serif italic leading-tight">{product.name}</h3>
+                      <p className="text-[11px] text-earth-500 font-medium tracking-wide italic">Nguồn gốc: {product.origin}</p>
                    </div>
-                   <div className="text-2xl serif font-bold text-earth-900">{product.price.toLocaleString('vi-VN')}Ä‘</div>
+                   <div className="text-xl serif font-bold text-earth-900 whitespace-nowrap">{product.price.toLocaleString('vi-VN')} đ</div>
                 </div>
                 
-                <p className="text-earth-600 text-base italic font-serif leading-relaxed mb-10 flex-grow line-clamp-3">
+                <p className="text-earth-600 text-sm italic font-serif leading-relaxed mb-6 flex-grow line-clamp-3">
                   {product.story}
                 </p>
 
-                <Button variant="secondary" className="w-full py-5 text-[11px]">
-                  <ShoppingBag className="w-4 h-4 mr-3" />
-                  Sá»Ÿ há»¯u di sáº£n nÃ y
-                </Button>
+                <Link to={`/shop/${product.id}`}>
+                  <Button variant="secondary" className="w-full py-5 text-[11px]">
+                    <ShoppingBag className="w-4 h-4 mr-3" />
+                    Sở hữu di sản này
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -87,13 +90,13 @@ export default function Shop() {
         <div className="mt-40 bg-earth-900 text-white p-12 md:p-32 rounded-sm overflow-hidden relative premium-shadow">
            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
               <div className="space-y-10">
-                 <h2 className="text-5xl md:text-7xl serif italic leading-[0.9]">Tá»« bÃ n tay <br />Ä‘áº¿n trÃ¡i tim</h2>
+                 <h2 className="text-5xl md:text-7xl serif italic leading-[0.9]">Từ bàn tay <br />đến trái tim</h2>
                  <p className="text-earth-300 text-xl italic font-serif leading-relaxed">
-                    ChÃºng tÃ´i cam káº¿t xÃ¢y dá»±ng má»™t há»‡ sinh thÃ¡i cÃ´ng báº±ng, nÆ¡i 70% doanh thu Ä‘Æ°á»£c chuyá»ƒn trá»±c tiáº¿p Ä‘áº¿n cÃ¡c nghá»‡ nhÃ¢n, giÃºp há» báº£o tá»“n nghá» truyá»n thá»‘ng vÃ  phÃ¡t triá»ƒn cá»™ng Ä‘á»“ng bá»n vá»¯ng.
+                    Chúng tôi cam kết xây dựng một hệ sinh thái công bằng, nơi 70% doanh thu được chuyển trực tiếp đến các nghệ nhân, giúp họ bảo tồn nghề truyền thống và phát triển cộng đồng bền vững.
                  </p>
                  <div className="pt-6">
                     <Button size="lg" variant="outline" className="text-white border-white/20 hover:bg-white hover:text-earth-900 px-12">
-                       TÃ¬m hiá»ƒu vá» sá»© má»‡nh cá»§a chÃºng tÃ´i
+                       Tìm hiểu về sứ mệnh của chúng tôi
                     </Button>
                  </div>
               </div>
@@ -104,7 +107,7 @@ export default function Shop() {
                  </div>
                  {/* Decorative element */}
                  <div className="absolute -top-12 -right-12 w-40 h-40 border border-white/10 rounded-full flex items-center justify-center italic text-white/20 text-[10px] uppercase tracking-widest leading-none text-center p-8">
-                    100% Thá»§ cÃ´ng báº£n Ä‘á»‹a
+                    100% Thủ công bản địa
                  </div>
               </div>
            </div>

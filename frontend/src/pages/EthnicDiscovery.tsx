@@ -26,14 +26,14 @@ export default function EthnicDiscovery() {
             className="inline-flex items-center gap-2 px-6 py-2 bg-white premium-shadow text-terracotta text-[10px] font-bold uppercase tracking-[0.4em] rounded-full mb-10"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Kho tÃ ng di sáº£n sá»‘ng</span>
+            <span>Kho tàng di sản sống</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl mb-10 serif leading-[0.9]"
           >
-            DÃ¢n tá»™c <br /><span className="italic font-light text-earth-400">vÃ¹ng Ä‘áº¡i ngÃ n</span>
+            Dân tộc <br /><span className="italic font-light text-earth-400">vùng đại ngàn</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -41,11 +41,11 @@ export default function EthnicDiscovery() {
             transition={{ delay: 0.1 }}
             className="text-earth-600 text-xl leading-relaxed italic font-serif max-w-3xl mx-auto"
           >
-            Má»—i dÃ¢n tá»™c lÃ  má»™t pho sá»­ sá»‘ng, má»™t bá»©c tranh thá»• cáº©m rá»±c rá»¡ sáº¯c mÃ u giá»¯a mÃ¢y ngÃ n. KhÃ¡m phÃ¡ chiá»u sÃ¢u vÄƒn hoÃ¡ cá»§a nhá»¯ng con ngÆ°á»i tá»± do nháº¥t vÃ¹ng cao phÃ­a Báº¯c.
+            Mỗi dân tộc là một pho sử sống, một bức tranh thổ cẩm rực rỡ sắc màu giữa mây ngàn. Khám phá chiều sâu văn hoá của những con người tự do nhất vùng cao phía Bắc.
           </motion.p>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {ethnicGroups.map((ethnic, index) => (
             <motion.div
               key={ethnic.id}
@@ -55,7 +55,7 @@ export default function EthnicDiscovery() {
               transition={{ duration: 1, delay: index * 0.2 }}
               className="flex flex-col group"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-sm premium-shadow mb-12">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm premium-shadow mb-8">
                 {ethnic.cldId ? (
                   <AdvancedImage
                     cldImg={getCldImage(ethnic.cldId)}
@@ -68,35 +68,35 @@ export default function EthnicDiscovery() {
                     className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-earth-950 via-earth-950/20 to-transparent flex flex-col justify-end p-12 lg:p-16">
+                <div className="absolute inset-0 bg-gradient-to-t from-earth-950 via-earth-950/20 to-transparent flex flex-col justify-end p-8 lg:p-12">
 
-                   <div className="flex items-center gap-4 mb-6">
+                   <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-px bg-white/40" />
-                      <span className="text-white/60 uppercase tracking-[0.4em] text-[9px] font-bold">HÃ nh trÃ¬nh chi tiáº¿t</span>
+                      <span className="text-white/60 uppercase tracking-[0.4em] text-[9px] font-bold">Hành trình chi tiết</span>
                    </div>
-                   <h2 className="text-white text-6xl italic mb-0 serif">DÃ¢n tá»™c {ethnic.name}</h2>
+                   <h2 className="text-white text-5xl italic mb-0 serif">Dân tộc {ethnic.name}</h2>
                 </div>
               </div>
-              <div className="px-4 space-y-10">
-                <p className="text-earth-700 text-2xl leading-relaxed italic font-serif border-l-4 border-terracotta/20 pl-8">
+              <div className="space-y-8">
+                <p className="text-earth-700 text-xl leading-relaxed italic font-serif border-l-4 border-terracotta/20 pl-6">
                   "{ethnic.shortDesc}"
                 </p>
-                <div className="grid grid-cols-2 gap-12 py-10 border-y border-earth-200/50">
+                <div className="grid grid-cols-2 gap-8 py-8 border-y border-earth-200/50">
                   <div>
-                    <h4 className="text-[10px] uppercase font-bold tracking-[0.3em] text-earth-400 mb-6">CÃ¡c nhÃ¡nh chÃ­nh</h4>
+                    <h4 className="text-[10px] uppercase font-bold tracking-[0.3em] text-earth-400 mb-6">Các nhánh chính</h4>
                     <ul className="space-y-3 text-sm font-medium text-earth-800 italic font-serif">
                       {ethnic.subgroups.map(s => <li key={s} className="flex items-center gap-2"><div className="w-1 h-1 bg-terracotta rounded-full" /> {s}</li>)}
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase font-bold tracking-[0.3em] text-earth-400 mb-6">Nghá» truyá»n thá»‘ng</h4>
+                    <h4 className="text-[10px] uppercase font-bold tracking-[0.3em] text-earth-400 mb-6">Nghề truyền thống</h4>
                     <ul className="space-y-3 text-sm font-medium text-earth-800 italic font-serif">
                       {ethnic.crafts.map(c => <li key={c} className="flex items-center gap-2"><div className="w-1 h-1 bg-forest rounded-full" /> {c}</li>)}
                     </ul>
                   </div>
                 </div>
                 <Link to={`/ethnic/${ethnic.id}`} className="block">
-                  <Button size="lg" className="w-full">KhÃ¡m phÃ¡ báº£n sáº¯c {ethnic.name} <ArrowRight className="ml-4 w-5 h-5" /></Button>
+                  <Button size="lg" className="w-full">Khám phá bản sắc {ethnic.name} <ArrowRight className="ml-4 w-5 h-5" /></Button>
                 </Link>
               </div>
             </motion.div>
